@@ -1,5 +1,3 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-
 let noBtn = document.querySelector("#bad-option");
 let yesBtn = document.querySelector("#good-option");
 let misclickText = document.querySelector("#misclickText");
