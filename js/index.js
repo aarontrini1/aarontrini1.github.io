@@ -1,4 +1,12 @@
-import { fetchCat } from "./js/api/fetchCat";
+//import { fetchCat } from "./js/api/fetchCat";
+
+async function fetchCat() {
+  const response = await fetch("https://cataas.com/cat?height=500");
+
+  const data = await response.blob();
+
+  return data;
+}
 
 let noBtn = document.querySelector("#bad-option");
 let yesBtn = document.querySelector("#good-option");
