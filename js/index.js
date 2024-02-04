@@ -1,10 +1,17 @@
+import { fetchCat } from "./api/fetchCat";
+
 let noBtn = document.querySelector("#bad-option");
 let yesBtn = document.querySelector("#good-option");
 let misclickText = document.querySelector("#misclickText");
+let mainEventDiv = document.querySelector("#main");
 
 let catPic = document.querySelector("#cat-pic");
 let cryingCat = document.querySelector("#crying-cat");
 let happyCat = document.querySelector("#happy-cat");
+
+let moreCatSection = document.querySelector("#earned-cat");
+let moreCatPicDiv = document.querySelector(".give-cat-pics");
+let moreCatBtn = document.querySelector("#moreCatBtn");
 
 
 const maxX = window.innerWidth;
@@ -51,15 +58,31 @@ noBtn.addEventListener("click", (event) => {
 });
 
 //CORRECT OPTION
+//hover
 yesBtn.addEventListener("mouseover", (event) => {
   catPic.classList.add("d-none");
   happyCat.classList.remove("d-none");
   cryingCat.classList.add("d-none");
 })
 
+
+//clicked
 yesBtn.addEventListener("click", (event) => {
+  //Set text for congrats
   misclickText.classList.remove("text-danger");
   misclickText.classList.add("text-success");
   misclickText.textContent = "YAY!! Correct choice!! See you soon squish 😘";
+
+  //disappear Valentine's choice button
   document.querySelector(".cat-button").classList.add("d-none");
+
+  moreCatSection.classList.remove("d-none")
+})
+
+moreCatBtn.addEventListener("click", (event) => {
+  mainEventDiv.classList.add("d-none");
+
+  let catPic = fetchCat();
+  console.log(catPic)
+
 })
