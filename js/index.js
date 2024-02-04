@@ -1,4 +1,4 @@
-import { fetchCat } from "./api/fetchCat";
+import { fetchCat } from "./js/api/fetchCat";
 
 let noBtn = document.querySelector("#bad-option");
 let yesBtn = document.querySelector("#good-option");
