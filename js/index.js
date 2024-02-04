@@ -76,13 +76,20 @@ yesBtn.addEventListener("click", (event) => {
   //disappear Valentine's choice button
   document.querySelector(".cat-button").classList.add("d-none");
 
-  moreCatSection.classList.remove("d-none")
+  moreCatSection.classList.remove("d-none");
 })
 
-moreCatBtn.addEventListener("click", (event) => {
+moreCatBtn.addEventListener("click", async () => {
   mainEventDiv.classList.add("d-none");
 
-  let catPic = fetchCat();
-  console.log(catPic)
+  let catPic = await fetchCat();
+  let catURL = URL.createObjectURL(catPic);
+
+  let catImg = document.createElement("img");
+
+
+  catImg.src = catURL;
+  moreCatPicDiv.innerHTML = "";
+  moreCatPicDiv.appendChild(catImg)
 
 })
