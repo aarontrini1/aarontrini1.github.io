@@ -91,11 +91,14 @@ moreCatBtn.addEventListener("click", async () => {
   mainEventDiv.classList.add("d-none");
 
   let catPic = await fetchCat();
+  console.log("1stCat", catPic);
   let cat2 = await fetchCat();
-
+  console.log("2nd Cat", cat2);
   catPic = new Blob([catPic, cat2], {type: catPic.type})
-
+  console.log("2Cats", catPic);
   let catURL = URL.createObjectURL(catPic);
+
+
 
   let catImg = document.createElement("img");
 
